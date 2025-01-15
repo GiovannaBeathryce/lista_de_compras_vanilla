@@ -82,6 +82,11 @@ p {
     line-height: 19px;
 }
 
+.lista-item-botoes-container{
+    display: flex;
+    gap: 4px;
+}
+
 .button-item {
     padding: 12px 16px;
     border-radius: 24px;
@@ -94,6 +99,7 @@ p {
     border: none;
     cursor: pointer;
 }
+
 
 form {
     display: flex;
