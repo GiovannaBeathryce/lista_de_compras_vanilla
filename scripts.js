@@ -1,5 +1,7 @@
 const item = document.getElementById("input-item");
 const btnAdicionaItem = document.getElementById("adicionar-item");
+const listaDeCompras = document.getElementById("lista-de-compras");
+const listaComprados = document.getElementById("lista-comprados");
 let contador = 0;
 
 btnAdicionaItem.addEventListener("click", addItem);
@@ -29,11 +31,19 @@ function addItem(event){
     checkboxLabel.addEventListener("click", function (evento) {
         const checkboxInput = evento.currentTarget.querySelector(".checkbox-input");
         const checkboxCustomizado = evento.currentTarget.querySelector(".checkbox-customizado");
+        const itemTitulo = evento.currentTarget.closest("li").querySelector("#item-titulo")
 
-        checkboxInput.checked ? 
-            checkboxCustomizado.classList.add("checked") 
-        : 
-            checkboxCustomizado.classList.remove("checked")
+        if(checkboxInput.checked){
+
+            checkboxCustomizado.classList.add("checked");
+            itemTitulo.style.textDecoration = "line-through"
+            listaComprados.appendChild(itemLista);
+            
+        }else{
+            checkboxCustomizado.classList.remove("checked");
+            itemTitulo.style.textDecoration = "none"
+            listaDeCompras.appendChild(itemLista);
+        }
     })
     
     const checkboxCustom = document.createElement("div");
@@ -47,6 +57,7 @@ function addItem(event){
 
 
     const nomeItemLista = document.createElement("p");
+    nomeItemLista.id = "item-titulo"
     nomeItemLista.innerText = item.value;
     containerNome.appendChild(nomeItemLista);
     containerItemLista.appendChild(containerNome);
