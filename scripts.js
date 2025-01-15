@@ -2,7 +2,7 @@ const item = document.getElementById("input-item");
 const btnAdicionaItem = document.getElementById("adicionar-item");
 const listaDeCompras = document.getElementById("lista-de-compras");
 const listaComprados = document.getElementById("lista-comprados");
-let contador = 0;
+let contador = 1;
 
 btnAdicionaItem.addEventListener("click", addItem);
 
@@ -87,8 +87,12 @@ function addItem(event){
 
     containerItemLista.appendChild(containerBotoesItem);
 
-    itemLista.appendChild(containerItemLista);
+    const itemData = document.createElement("p");
+    itemData.classList.add("texto-data")
+    itemData.innerText = `${new Date().toLocaleDateString("pt-BR", {weekday:"long"})} (${new Date().toLocaleDateString()}) às ${new Date().toLocaleTimeString("pr-BR", {hour:"numeric", minute:"numeric"})}`;
 
-    const listaDeCompras = document.getElementById("lista-de-compras")
+    itemLista.appendChild(containerItemLista);
+    itemLista.appendChild(itemData);
+
     listaDeCompras.appendChild(itemLista)
 }
