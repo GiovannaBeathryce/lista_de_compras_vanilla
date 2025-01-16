@@ -1,3 +1,4 @@
+import { excluirItem } from "./excluirItem.js";
 import { exibirListaComprados } from "./exibirListaComprados.js";
 
 let contador = 0;
@@ -71,6 +72,8 @@ export function criarItemLista (item, listaCompras, listaComprados){
     imgDeleteBtn.alt = "Deletar item";
     deleteBtn.appendChild(imgDeleteBtn);
     containerBotoesItem.appendChild(deleteBtn);
+
+    deleteBtn.addEventListener("click", () => { excluirItem(itemLista); })
 
     const editBtn = document.createElement("button");
     editBtn.classList.add("item-lista-button");
