@@ -1,6 +1,7 @@
 import { editarItem } from "./editarItem.js";
 import { excluirItem } from "./excluirItem.js";
 import { exibirListaComprados } from "./exibirListaComprados.js";
+import { verificarListaVazia } from "./verificarListaVazia.js";
 
 let contador = 0;
 
@@ -35,12 +36,14 @@ export function criarItemLista (item, listaCompras, listaComprados){
             checkboxCustomizado.classList.add("checked");
             itemTitulo.style.textDecoration = "line-through"
             listaComprados.appendChild(itemLista);
+            verificarListaVazia(listaCompras)
             exibirListaComprados()
             
         }else{
             checkboxCustomizado.classList.remove("checked");
             itemTitulo.style.textDecoration = "none"
             listaCompras.appendChild(itemLista);
+            verificarListaVazia(listaCompras)
             exibirListaComprados()
         }
     })
