@@ -1,3 +1,5 @@
+import { exibirListaComprados } from "./exibirListaComprados.js";
+
 const listaComprados = document.getElementById("lista-comprados");
 const listaDeCompras = document.getElementById("lista-de-compras");
 
@@ -34,11 +36,13 @@ export function criarItemLista (item){
             checkboxCustomizado.classList.add("checked");
             itemTitulo.style.textDecoration = "line-through"
             listaComprados.appendChild(itemLista);
+            exibirListaComprados()
             
         }else{
             checkboxCustomizado.classList.remove("checked");
             itemTitulo.style.textDecoration = "none"
             listaDeCompras.appendChild(itemLista);
+            exibirListaComprados()
         }
     })
     
