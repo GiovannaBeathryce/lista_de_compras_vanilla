@@ -6,6 +6,10 @@ import { verificarListaVazia } from "./verificarListaVazia.js";
 let contador = 0;
 
 export function criarItemLista (item, listaCompras, listaComprados){
+    if(item === null || item.trim() === ""){
+        alert("Por favor, insira um item!")
+        return;
+    }
 
     const itemLista = document.createElement("li");
     const containerItemLista = document.createElement("div");
