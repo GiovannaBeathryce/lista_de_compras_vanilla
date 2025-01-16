@@ -66,6 +66,10 @@ p {
     text-align: left;
 }
 
+#mensagem-lista-vazia{
+    text-align: center;
+}
+
 .input-item {
     display: block;
     padding: 12px 16px;
