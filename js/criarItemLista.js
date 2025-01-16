@@ -1,3 +1,4 @@
+import { editarItem } from "./editarItem.js";
 import { excluirItem } from "./excluirItem.js";
 import { exibirListaComprados } from "./exibirListaComprados.js";
 
@@ -84,6 +85,7 @@ export function criarItemLista (item, listaCompras, listaComprados){
     editBtn.appendChild(imgEditBtn);
     containerBotoesItem.appendChild(editBtn);
 
+    editBtn.addEventListener("click", () => { editarItem(itemLista); })
 
     containerItemLista.appendChild(containerBotoesItem);
 
