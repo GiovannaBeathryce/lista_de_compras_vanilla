@@ -26,4 +26,6 @@ Após baixar o projeto, você pode abrir com o Visual Studio Code. Para isso, no
 
 Ao finalizar esses passos, você pode executar a aplicação com a extensão Live Server 🏆 
 
+Link para acesso à aplicação => https://lista-de-compras-vanilla.vercel.app/
+
 
