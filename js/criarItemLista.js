@@ -1,3 +1,4 @@
+import { novaData } from "./adicionarData.js";
 import { editarItem } from "./editarItem.js";
 import { excluirItem } from "./excluirItem.js";
 import { exibirListaComprados } from "./exibirListaComprados.js";
@@ -98,7 +99,7 @@ export function criarItemLista (item, listaCompras, listaComprados){
 
     const itemData = document.createElement("p");
     itemData.classList.add("texto-data")
-    itemData.innerText = `${new Date().toLocaleDateString("pt-BR", {weekday:"long"})} (${new Date().toLocaleDateString()}) às ${new Date().toLocaleTimeString("pr-BR", {hour:"numeric", minute:"numeric"})}`;
+    itemData.innerText = novaData()
 
     itemLista.appendChild(containerItemLista);
     itemLista.appendChild(itemData);
